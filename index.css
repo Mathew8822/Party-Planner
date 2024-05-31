@@ -1,0 +1,32 @@
+h1, h2 {
+    margin-bottom: 1rem;
+  }
+  
+  #parties-list, #add-party {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  #party-items {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .party-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+  
+  .party-info {
+    flex-grow: 1;
+  }
+  
+  .delete-button {
+    background-color: #ddd;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+  }
