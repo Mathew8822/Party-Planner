@@ -1,0 +1,47 @@
+// Array to store party information (initially empty)
+let parties = [];
+
+// Function to display parties in the list
+function displayParties() {
+    const partyList = document.getElementById("party-items");
+    partyList.innerHTML = ""; // Clear existing list items
+
+    parties.forEach((party) => {
+        const listItem = document.createElement("li");
+        listItem.classList.add("party-item");
+
+        const partyInfo = document.createElement("div");
+        partyInfo.classList.add("party-info");
+        partyInfo.innerHTML = `
+      <h3>${party.name}</h3>
+      <p>Date: ${party.date}</p>
+      <p>Time: ${party.time}</p>
+      <p>Location: ${party.location}</p>
+      <p>Description: ${party.description}</p>
+    `;
+
+        const deleteButton = document.createElement("button");
+        deleteButton.classList.add("delete-button");
+        deleteButton.textContent = "Delete";
+        deleteButton.addEventListener("click", () => deleteParty(party)); // Add event listener for delete button
+
+        listItem.appendChild(partyInfo);
+        listItem.appendChild(deleteButton);
+        partyList.appendChild(listItem);
+    });
+}
+
+// Function to delete a party
+function deleteParty(partyToDelete) {
+    parties = parties.filter((party) => party !== partyToDelete);
+    displayParties(); // Update the list after deletion
+}
+
+// Event listener for submitting the new party form
+const newPartyForm = document.getElementById("new-party-form");
+newPartyForm.addEventListener("submit", function (event) {
+    event.preventDefault()
+}; // Prevent default form submission
+
+    const name = document.getElementById("name").value;
+const date = document.getElementById("date").)
